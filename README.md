@@ -1,2 +1,2 @@
 # ind_public
-public repo of an individual user
+Individual Public Repo
