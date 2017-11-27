@@ -9,7 +9,8 @@ build:
   ci:
     - python --version
     - ls -al /tmp/cache
-    - echo "export FOO=BAR > cache.txt
+    - cat /tmp/cache/cache.txt
+    - echo "export FOO=BAR" > cache.txt
     - rm -rf /tmp/cache
     - mkdir -p /tmp/cache
     - cp cache.txt /tmp/cache
