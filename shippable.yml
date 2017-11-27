@@ -17,7 +17,7 @@ build:
       fi
     - |
       . /tmp/cache/cache.sh
-      if [ -z "$TEST_CACHE" ]; then
+      if [ ! -z "$TEST_CACHE" ]; then
         if [ "$FOO" != "BAR" ]; then
           echo "Cache is not working"
           exit 1
