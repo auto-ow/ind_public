@@ -26,7 +26,7 @@ build:
     - echo "export FOO=BAR" > cache.sh
     - rm -rf /tmp/cache
     - mkdir -p /tmp/cache
-    - cp cache.txt /tmp/cache
+    - cp cache.sh /tmp/cache
   cache: true
   cache_dir_list:
     - /tmp/cache
