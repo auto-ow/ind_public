@@ -8,9 +8,22 @@ python:
 build:
   ci:
     - python --version
-    - ls -al /tmp/cache
-    - cat /tmp/cache/cache.txt
-    - echo "export FOO=BAR" > cache.txt
+    - |
+      if [ -z "$RESET_CACHE" ]; then
+        if [ -f /tmp/cache/cache.sh ]; then
+          echo "Cache did not get reset"
+          exit 1
+        fi
+      fi
+    - |
+      . /tmp/cache/cache.sh
+      if [ -z "$TEST_CACHE" ]; then
+        if [ "$FOO" != "BAR" ]; then
+          echo "Cache is not working"
+          exit 1
+        fi
+      fi
+    - echo "export FOO=BAR" > cache.sh
     - rm -rf /tmp/cache
     - mkdir -p /tmp/cache
     - cp cache.txt /tmp/cache
