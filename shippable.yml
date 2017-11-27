@@ -9,7 +9,7 @@ build:
   ci:
     - python --version
     - |
-      if [ -z "$RESET_CACHE" ]; then
+      if [[ -z "${$RESET_CACHE}" ]]; then
         if [ -f /tmp/cache/cache.sh ]; then
           echo "Cache did not get reset"
           exit 1
